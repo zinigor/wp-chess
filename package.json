@@ -17,5 +17,8 @@
 	"devDependencies": {
 		"@wordpress/eslint-plugin": "^22.11.0",
 		"@wordpress/scripts": "^30.18.0"
+	},
+	"dependencies": {
+		"chess.js": "^1.4.0"
 	}
 }
