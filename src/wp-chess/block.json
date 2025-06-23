@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "zinigor/wp-chess",
+	"version": "0.1.0",
+	"title": "WP Chess",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Lets you play chess with visitors of your site.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "wp-chess",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
