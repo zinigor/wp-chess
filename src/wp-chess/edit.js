@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
-import { __ } from '@wordpress/i18n';
+import { __, _x } from '@wordpress/i18n';
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -11,7 +11,8 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -27,12 +28,30 @@ import './editor.scss';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  *
+ * @param {{ attributes: Object, setAttributes: Function }} state
+ * @param {Object}                                          state.attributes    block editor attributes.
+ * @param {Function}                                        state.setAttributes attribute setter function.
  * @return {Element} Element to render.
  */
-export default function Edit() {
+export default function Edit( { attributes, setAttributes } ) {
+	const { startFenPosition } = attributes;
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Wp Chess – hello from the editor!', 'wp-chess' ) }
-		</p>
+		<div>
+			<InspectorControls>
+				<PanelBody
+					title={ _x( 'Settings', 'Editor sidebar section header', 'wp-chess' ) }
+				>
+					<TextControl
+						__nextHasNoMarginBottom
+						__next40pxDefaultSize
+						label={ __( 'Starting FEN position', 'wp-chess' ) }
+						value={ startFenPosition || '' }
+						onChange={ ( value ) => setAttributes( { startFenPosition: value } ) }
+					/>
+				</PanelBody>
+			</InspectorControls>
+			<p { ...useBlockProps() }>{ __( "WordPress Chess block", "wp-chess" ) }</p>
+            <p { ...useBlockProps() }>{ startFenPosition }</p>
+		</div>
 	);
 }
