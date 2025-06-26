@@ -51,7 +51,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 			</InspectorControls>
 			<p { ...useBlockProps() }>{ __( "WordPress Chess block", "wp-chess" ) }</p>
-            <p { ...useBlockProps() }>{ startFenPosition }</p>
+			<p { ...useBlockProps() }>{ startFenPosition }</p>
 		</div>
 	);
 }
