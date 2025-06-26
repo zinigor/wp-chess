@@ -19,7 +19,11 @@ import { __ } from '@wordpress/i18n';
  */
 export default function save( { attributes } ) {
 	return (
-		<p class="wp-chess-board fen-position-board" data-fen={ attributes.startFenPosition } { ...useBlockProps.save() }>
+		<p
+			className="wp-chess-board fen-position-board"
+			data-fen={ attributes.startFenPosition }
+			{ ...useBlockProps.save() }
+		>
 			{ __( 'Loading', 'wp-chess' ) }
 		</p>
 	);
