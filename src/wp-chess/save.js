@@ -5,6 +5,7 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -13,12 +14,13 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
  *
+ * @param {{ attributes: Object }} state
  * @return {Element} Element to render.
  */
-export default function save() {
+export default function save( { attributes } ) {
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Wp Chess – hello from the saved content!' }
+		<p class="wp-chess-board fen-position-board" data-fen={ attributes.startFenPosition } { ...useBlockProps.save() }>
+			{ __( 'Loading', 'wp-chess' ) }
 		</p>
 	);
 }
