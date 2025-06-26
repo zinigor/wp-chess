@@ -1,16 +1,16 @@
 <?php
 /**
  * Plugin Name:       Wp Chess
- * Description:       Example block scaffolded with Create Block tool.
+ * Description:       WordPress adaptation of ChessboardJS for Gutenberg.
  * Version:           0.1.0
  * Requires at least: 6.7
  * Requires PHP:      7.4
- * Author:            The WordPress Contributors
+ * Author:            Igor Zinovyev
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       wp-chess
  *
- * @package CreateBlock
+ * @package zinigor/wp-chess
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
