@@ -19,6 +19,7 @@
 		"@wordpress/scripts": "^30.18.0"
 	},
 	"dependencies": {
+		"@chrisoakman/chessboardjs": "^1.0.0",
 		"chess.js": "^1.4.0"
 	}
 }
