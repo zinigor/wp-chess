@@ -16,7 +16,8 @@
 	},
 	"devDependencies": {
 		"@wordpress/eslint-plugin": "^22.11.0",
-		"@wordpress/scripts": "^30.18.0"
+		"@wordpress/scripts": "^30.18.0",
+		"eslint": "^8.57.1"
 	},
 	"dependencies": {
 		"@chrisoakman/chessboardjs": "^1.0.0",
